@@ -15,12 +15,17 @@
 <body>
   <div id="app">
     <v-app>
-      <v-app-bar app color="#21222e" height="100" class="design">
-        <v-avatar class="mr-3" size="70">
+      <v-app-bar app color="#21222e" height="100" class="design mx-auto" id="home">
+        <v-avatar class="mr-3" size="70" @click="$vuetify.goTo('#home')">
 
           <v-img contain max-height="100%" src="img/logo-nm.png"></v-img>
           <!-- <v-img contain max-height="70%" src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"></v-img> -->
         </v-avatar>
+        <v-spacer></v-spacer>
+        <v-btn class="navbar-menu" style="color: #ffffff;"  text @click="$vuetify.goTo('#about-me')">A propos de moi</v-btn>
+        <v-btn style="color: #ffffff;" text @click="$vuetify.goTo('#competences')">Mes compétences</v-btn>
+        <v-btn style="color: #ffffff;" text @click="$vuetify.goTo('#projets')">Mes projets</v-btn>
+        <v-btn style="color: #ffffff;" text @click="$vuetify.goTo('#contact')">Contact</v-btn>
         <v-toolbar-title class="font-weight-black headline">
         </v-toolbar-title>
       </v-app-bar>
@@ -108,7 +113,7 @@
             </span>
           </v-btn> -->
             <v-btn color="grey" href="img/cv_nicolas_marquillier.pdf" outlined large>
-              <span class="white--text text--darken-1 font-weight-bold">
+              <span class="white--text text--darken-1 font-weight-bold download">
                 Télécharger mon CV
               </span>
             </v-btn>
@@ -218,18 +223,31 @@
                 <v-img src="img\apple_logo.png" style=" max-width: 100px;
                 max-height: 100px;"></v-img>
               </div>
+              <div>
+                <v-img src="img\after_effects_logo.png" style=" max-width: 100px;
+                max-height: 100px;"></v-img>
+              </div>
+              <div>
+                <v-img src="img\illustrator_logo.png" style=" max-width: 100px;
+                max-height: 100px;"></v-img>
+              </div>
+              <div>
+                <v-img src="img\xd_logo.png" style=" max-width: 100px;
+                max-height: 100px;"></v-img>
+              </div>
             </div>
 
           </v-container>
+          <div class="py-12"></div>
 
-          <div class="py-1"></div>
+          <!-- <div class="py-1"></div> -->
         </section>
         <!-- swiper end -->
 
-        <section id="projets">
+        <section id="projets" class="design">
           <div class="py-12"></div>
           <v-container>
-            <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">Mes Projets</h2>
+            <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center" style="color: #ffffff;">Mes Projets</h2>
             <v-responsive class="mx-auto mb-12" max-width="150" left>
               <div class="title_component" style="position: relative;
               background-color: #00C3AF;
@@ -238,8 +256,8 @@
               z-index: 1;"></div>
 
             </v-responsive>
-            <v-row>
-              <v-col v-for="({ src, text, title, time, techno }, i) in articles" :key="i" cols="15" md="4">
+            <v-row >
+              <v-col v-for="({ src, text, title, time, techno }, i) in articles" :key="i" cols="15" md="4" >
                 <!-- <v-card elevation="10" max-width="70%">
                   <v-img :src="src" class="mb-4" height="175" max-width="100%"></v-img>
                   <h3 class="font-weight-black mb-4 text-uppercase" v-text="title"></h3>
@@ -248,16 +266,16 @@
                     Continue Reading
                   </v-btn> 
                 </v-card> -->
-                <v-card hover elevation="1" class="card-project" style=" width:auto; height: 350px; border-radius: 20px;">
+                <v-card hover elevation="1" class="card-project" style=" width:auto; height: 370px; border-radius: 30px;">
                   <div>
 
                     <!-- <v-img :src="src" height="150" max-width="100%" style="border-radius: 20px 20px 0px 0px;"></v-img> -->
-                    <v-img :src="techno" height="150" max-width="100%" style="border-radius: 20px 20px 0px 0px;"></v-img>
+                    <v-img :src="techno" height="170" max-width="100%" style="border-radius: 30px 30px 0px 0px;"></v-img>
                   </div>
                   <!-- <div>
                     <v-img :src="techno" height="150" max-width="50%"></v-img>
                   </div> -->
-                  <div>
+                  <div >
                     <v-row >
                       <!-- <v-avatar style="display: inline-block; margin: 20px;">
                         <img :src="techno"></v-img>
@@ -268,7 +286,7 @@
                           <div v-text="time"></div>
                         </div>
                       </v-card-title>
-                      <v-card-text class="subtitle-1" v-text="text" style="margin: 20px;"></v-card-text>
+                      <v-card-text class="subtitle-1" v-text="text" style="margin: 20px; font-size: 0.900rem;"></v-card-text>
                       
                       
                       <div class="justify-content:center;">
@@ -333,27 +351,29 @@
             <input type="submit" name="submit" value="Submit">
           </form>
         </v-container> -->
+        <section id="contact">
 
-        <div class="main center design">
-          <div class="icon center">
-            <a target="_blank" href="https://www.linkedin.com/in/nicolas-marquillier-aa08a4101">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-
-          <div class="icon center">
-            <a target="_blank" href="mailto:nicolas.marquillier.pro@gmail.com">
-              <i class="far fa-envelope"></i></a>
-          </div>
-
-          <!-- <div class="icon center">
-            <i class="fab fa-whatsapp fa-2x"></i>
-          </div>
-
-          <div class="icon center">
-            <i class="fab fa-twitter fa-2x"></i>
-          </div> -->
-        </div>
+          <div class="main center design">
+            <div class="icon center">
+              <a target="_blank" href="https://www.linkedin.com/in/nicolas-marquillier-aa08a4101">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+            
+            <div class="icon center">
+              <a target="_blank" href="mailto:nicolas.marquillier.pro@gmail.com">
+                <i class="far fa-envelope"></i></a>
+              </div>
+              
+              <!-- <div class="icon center">
+                <i class="fab fa-whatsapp fa-2x"></i>
+              </div>
+              
+              <div class="icon center">
+                <i class="fab fa-twitter fa-2x"></i>
+              </div> -->
+            </div>
+          </section>
         <!--div class="py-12"></div>
         </v-sheet> -->
         <section id="about-me" class="design" class="grey lighten-3">
@@ -403,43 +423,43 @@
               src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
               title: 'ARBS',
               time: '12/2020 - 02/2021',
-              text: 'Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.',
+              text: "Développement de l'interface selon le CDC, plateforme d'achat revente de manuel scolaire.",
               techno: 'img/arbs.png',
             },
             {
               src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-              title: 'Appli interne',
+              title: 'Skillosi',
               time: '12/2020 - 02/2021',
-              techno: 'img/skillosi.png',
-              text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
+              techno: 'img/projet_skillosi.png',
+              text: "Proposition design et Développement de l'interface, plateforme de gestion de compétences internes",
             },
             {
               src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
-              title: 'flutter',
+              title: 'Promod',
               time: '12/2020 - 02/2021',
-              techno: "img/flutter_logo.png",
-              text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
+              techno: "img/projet-promod_mrf.png",
+              text: "Réalisation de divers maquettes Adobe XD, développement d'une WebView",
             },
             {
               src: 'https://images.unsplash.com/photo-1423784346385-c1d4dac9893a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-              title: 'ARBS',
+              title: 'CEF',
               time: '12/2020 - 02/2021',
-              techno: "img/flutter_logo.png",
-              text: 'Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.',
+              techno: "img/projet_cef.png",
+              text: "Développement de l'interface selon le CDC, organisme d'allocations familiales complémentaires.",
             },
             {
               src: 'https://images.unsplash.com/photo-1475938476802-32a7e851dad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-              title: 'Appli interne',
+              title: 'Rabot dutilleul',
               time: '12/2020 - 02/2021',
-              techno: 'img/flutter_logo.png',
-              text: 'Nam ut leo ipsum. Maecenas pretium aliquam feugiat. Aenean vel tempor est, vitae tincidunt risus. Sed sodales vestibulum nibh.',
+              techno: 'img/projet_talent.png',
+              text: 'Design et élaboration charte graphique, plateforme de mise à disposition de ressources humaines secteur BTP',
             },
             {
               src: 'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1892&q=80',
-              title: 'flutter',
+              title: 'Carter-Cash',
               time: '12/2020 - 02/2021',
-              techno: 'img/flutter_logo.png',
-              text: 'Vestibulum in dictum velit, in rhoncus nibh. Maecenas neque libero, interdum a dignissim in, aliquet vitae lectus. Phasellus lorem enim, luctus ut velit eget.',
+              techno: 'img/projet_carter_cash.png',
+              text: "Proposition d'une maquette xd, pour la refonte du site en responsive",
             },
           ],
           features: [
@@ -473,14 +493,7 @@
 
   <style>
     .design {
-      /* background: linear-gradient(90deg,#17015C,#17FD5C); */
-      /* background: linear-gradient(90deg,#eb0028,#00a0df); */
-      /* background: linear-gradient(90deg,#001a57,#003366); */
-      /* background: linear-gradient(90deg,#cc0033,#003366); */
-      /* background:linear-gradient(120deg, #eb0028, #00a0df); */
-      /* background:#21222e; */
       background-color: rgb(48, 49, 68);
-      /* background-image: linear-gradient( 109.6deg,  rgba(48,207,208,1) 11.2%, rgba(51,8,103,1) 92.5% ); */
     }
 
     .design-text {
@@ -564,7 +577,7 @@
     .icone {
       justify-content: center;
       flex-wrap: wrap;
-    }
+    } 
 
     /* .jobDate {
       text-align: center;
